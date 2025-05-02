@@ -1,8 +1,8 @@
 package dp_composite_file;
 
 public class File implements FileComponent {
-	final String tyoe = "FILE"
-			;
+	final String type = "FILE";
+	private int treeLevel = 0;
 	private String name;
 	private int size;
 	
@@ -23,8 +23,30 @@ public class File implements FileComponent {
 
 	@Override
 	public void showTree() {
-		System.out.println(this.tyoe + ": " + this.name);
+		System.out.println(this.getSpace() + this.type + ": " + this.name);
 		
+	}
+
+	@Override
+	public String getType() {
+		return this.type;
+	}
+
+	@Override
+	public void setTreeLevel(int treeLevel) {
+		this.treeLevel = treeLevel;	
+	}
+	
+	public int getTreeLevel() {
+		return treeLevel;
+	}
+	
+	private String getSpace() {
+		String space = "";
+		for (int i = 0; i < this.treeLevel; i++) {
+			space += "    ";
+		}
+		return space;
 	}
 	
 }
