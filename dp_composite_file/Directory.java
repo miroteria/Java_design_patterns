@@ -1,4 +1,4 @@
-package dp_composite_file;
+package design_patterns.dp_composite_file;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,7 +9,7 @@ public class Directory implements FileComponent {
 	private String name;
 	private int size = 0;
 	private int treeLevel = 0;
-	private List<FileComponent> components = new ArrayList();
+	private List<FileComponent> components = new ArrayList<>();
 	
 	public Directory(String name) {
 		this.name = name;
@@ -63,6 +63,16 @@ public class Directory implements FileComponent {
 			space += "    ";
 		}
 		return space;
+	}
+
+	@Override
+	public FileComponent getComponentByName(String name) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public List<FileComponent> getComponents() {
+		return components;
 	}
 	
 }

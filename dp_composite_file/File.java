@@ -1,4 +1,4 @@
-package dp_composite_file;
+package design_patterns.dp_composite_file;
 
 public class File implements FileComponent {
 	final String type = "FILE";
@@ -47,6 +47,15 @@ public class File implements FileComponent {
 			space += "    ";
 		}
 		return space;
+	}
+
+	@Override
+	public FileComponent getComponentByName(String name) {
+		if (this.name.equals(name)) {
+			return this;
+		} else {
+			return null;
+		}
 	}
 	
 }
