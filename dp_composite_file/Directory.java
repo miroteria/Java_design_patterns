@@ -1,4 +1,4 @@
-package design_patterns.dp_composite_file;
+package dp_composite_file;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,7 +30,11 @@ public class Directory implements FileComponent {
 
 	@Override
 	public int getFileSize() {
-		return this.size;
+		int size = 0;
+		for (FileComponent comp : this.components) {
+			size += comp.getFileSize();
+		}
+		return size;
 	}
 
 	@Override
@@ -66,9 +70,21 @@ public class Directory implements FileComponent {
 	}
 
 	@Override
-	public FileComponent getComponentByName(String name) {
-		// TODO Auto-generated method stub
-		return null;
+	public FileComponent getComponentByName(String name) {	
+		FileComponent c = null;
+		for (FileComponent comp : this.components) {
+			//System.out.println("Comp name: " + comp.getFileName());
+			if (comp.getFileName().equals(name) ) {
+				return comp;
+			} else {
+				c = comp.getComponentByName(name);
+				if (c != null) {
+					break;
+				}
+			}
+		}
+		
+		return c;
 	}
 
 	public List<FileComponent> getComponents() {

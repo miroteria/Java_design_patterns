@@ -1,4 +1,4 @@
-package design_patterns.dp_composite_file;
+package dp_composite_file;
 
 public interface FileComponent {
 	public String getFileName();
