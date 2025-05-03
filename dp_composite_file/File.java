@@ -1,6 +1,6 @@
 package dp_composite_file;
 
-public class File implements FileComponent {
+public class File implements Component {
 	final String type = "FILE";
 	private int treeLevel = 0;
 	private String name;
@@ -12,23 +12,23 @@ public class File implements FileComponent {
 	}
 		
 	@Override
-	public String getFileName() {
+	public String getComponentName() {
 		return this.name;
 	}
 
 	@Override
-	public int getFileSize() {
+	public int getComponentSize() {
 		return this.size;
 	}
 
 	@Override
-	public void showTree() {
+	public void showDetail() {
 		System.out.println(this.getSpace() + this.type + ": " + this.name);
 		
 	}
 
 	@Override
-	public String getType() {
+	public String getComponentType() {
 		return this.type;
 	}
 
@@ -50,7 +50,7 @@ public class File implements FileComponent {
 	}
 
 	@Override
-	public FileComponent getComponentByName(String name) {
+	public Component getComponentByName(String name) {
 		if (this.name.equals(name)) {
 			return this;
 		} else {

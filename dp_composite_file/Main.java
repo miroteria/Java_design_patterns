@@ -7,18 +7,19 @@ public class Main {
 		
 		// Test data...
 		// Creating test tree with directories and files. 
-		FileComponent tree = treeFactory.createTree();			
-		tree.showTree();
+		Component tree = treeFactory.createTree();			
+		tree.showDetail();
 		
 		System.out.println("***************************************************************");
 		
-		FileComponent comp1 = tree.getComponentByName("VACATION_CANARIEN");
-		System.out.println("Componenta: " + comp1.getFileName());
-		comp1.showTree();
-		System.out.println("Size of folder canarien: " + comp1.getFileSize());
+		Component comp1 = tree.getComponentByName("VACATION_CANARIEN");
+		System.out.println("Componenta: " + comp1.getComponentName());
+		comp1.showDetail();
+		System.out.println("Size of folder canarien: " + comp1.getComponentSize());
 		
-		FileComponent comp2 = tree.getComponentByName("picCroatia-2.jpg");
-		System.out.println("Componenta 2: " + comp2.getFileName());
+		Component comp2 = tree.getComponentByName("picCroatia-2.jpg");
+		System.out.println("Componenta 2: " + comp2.getComponentName());
+		comp2.showDetail();
 	}
 
 }

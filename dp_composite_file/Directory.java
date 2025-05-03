@@ -3,52 +3,51 @@ package dp_composite_file;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Directory implements FileComponent {
+public class Directory implements Component {
 	final String type = "DIR";
 	
 	private String name;
-	private int size = 0;
 	private int treeLevel = 0;
-	private List<FileComponent> components = new ArrayList<>();
+	private List<Component> components = new ArrayList<>();
 	
 	public Directory(String name) {
 		this.name = name;
 	}
 	
-	public void addComponent(FileComponent component) {
+	public void addComponent(Component component) {
 		this.components.add(component);
 	}
 	
-	public void removeComponent(FileComponent component) {
+	public void removeComponent(Component component) {
 		this.components.remove(component);
 	}
 	
 	@Override
-	public String getFileName() {
+	public String getComponentName() {
 		return this.name;
 	}
 
 	@Override
-	public int getFileSize() {
+	public int getComponentSize() {
 		int size = 0;
-		for (FileComponent comp : this.components) {
-			size += comp.getFileSize();
+		for (Component comp : this.components) {
+			size += comp.getComponentSize();
 		}
 		return size;
 	}
 
 	@Override
-	public void showTree() {
+	public void showDetail() {
 		System.out.println(this.getSpace() + this.type + ": " + this.name);
 		this.components.forEach(component -> 
 							{
 								component.setTreeLevel(this.treeLevel + 1);
-								component.showTree();
+								component.showDetail();
 							});
 	}
 
 	@Override
-	public String getType() {
+	public String getComponentType() {
 		return this.type;
 	}
 	
@@ -70,11 +69,11 @@ public class Directory implements FileComponent {
 	}
 
 	@Override
-	public FileComponent getComponentByName(String name) {	
-		FileComponent c = null;
-		for (FileComponent comp : this.components) {
+	public Component getComponentByName(String name) {	
+		Component c = null;
+		for (Component comp : this.components) {
 			//System.out.println("Comp name: " + comp.getFileName());
-			if (comp.getFileName().equals(name) ) {
+			if (comp.getComponentName().equals(name) ) {
 				return comp;
 			} else {
 				c = comp.getComponentByName(name);
@@ -87,7 +86,7 @@ public class Directory implements FileComponent {
 		return c;
 	}
 
-	public List<FileComponent> getComponents() {
+	public List<Component> getComponents() {
 		return components;
 	}
 	

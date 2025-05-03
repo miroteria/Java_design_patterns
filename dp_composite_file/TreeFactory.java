@@ -1,10 +1,10 @@
 package dp_composite_file;
 
 public class TreeFactory {
-	private FileComponent tree;
-	private FileComponent foundComponent = null;
+	private Component tree;
+	private Component foundComponent = null;
 
-	public FileComponent createTree() {
+	public Component createTree() {
 		Directory root = new Directory("ROOT");
 		Directory pictures = new Directory("PICTURES");
 		root.addComponent(pictures);
