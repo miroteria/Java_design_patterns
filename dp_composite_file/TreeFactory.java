@@ -1,4 +1,4 @@
-package dp_composite_file;
+package design_patterns.dp_composite_file;
 
 public class TreeFactory {
 	private Component tree;
@@ -30,4 +30,18 @@ public class TreeFactory {
 		
 		return root;
 	}
+	
+	public Component getComponentByName(String name) {				
+		Directory root = (Directory) this.tree;
+		root.getComponents().forEach(component -> {
+			System.out.println("looping component: " + component.getComponentName());
+			if (component.getComponentName().equals(name)) {
+				
+				this.foundComponent = component;
+			} 			
+		});
+		return this.foundComponent;
+	}
+	
+	
 }

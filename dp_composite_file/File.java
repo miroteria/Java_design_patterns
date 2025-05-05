@@ -1,7 +1,8 @@
-package dp_composite_file;
+package design_patterns.dp_composite_file;
 
 public class File implements Component {
 	final String type = "FILE";
+	
 	private int treeLevel = 0;
 	private String name;
 	private int size;
@@ -22,7 +23,8 @@ public class File implements Component {
 	}
 
 	@Override
-	public void showDetail() {
+	public void showDetail(int treeLevel) {
+		this.treeLevel = treeLevel;
 		System.out.println(this.getSpace() + this.type + ": " + this.name);
 		
 	}
@@ -32,7 +34,7 @@ public class File implements Component {
 		return this.type;
 	}
 
-	@Override
+
 	public void setTreeLevel(int treeLevel) {
 		this.treeLevel = treeLevel;	
 	}
@@ -50,7 +52,7 @@ public class File implements Component {
 	}
 
 	@Override
-	public Component getComponentByName(String name) {
+	public Component findComponentByName(String name) {
 		if (this.name.equals(name)) {
 			return this;
 		} else {

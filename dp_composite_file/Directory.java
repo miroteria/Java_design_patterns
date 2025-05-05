@@ -1,4 +1,4 @@
-package dp_composite_file;
+package design_patterns.dp_composite_file;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,6 +7,7 @@ public class Directory implements Component {
 	final String type = "DIR";
 	
 	private String name;
+	private int size = 0;
 	private int treeLevel = 0;
 	private List<Component> components = new ArrayList<>();
 	
@@ -29,21 +30,14 @@ public class Directory implements Component {
 
 	@Override
 	public int getComponentSize() {
-		int size = 0;
-		for (Component comp : this.components) {
-			size += comp.getComponentSize();
-		}
-		return size;
+		return this.size;
 	}
 
 	@Override
-	public void showDetail() {
+	public void showDetail(int treeLevel) {
+		this.treeLevel = treeLevel;
 		System.out.println(this.getSpace() + this.type + ": " + this.name);
-		this.components.forEach(component -> 
-							{
-								component.setTreeLevel(this.treeLevel + 1);
-								component.showDetail();
-							});
+		this.components.forEach(component -> component.showDetail(this.treeLevel + 1));
 	}
 
 	@Override
@@ -55,7 +49,6 @@ public class Directory implements Component {
 		return treeLevel;
 	}
 
-	@Override
 	public void setTreeLevel(int treeLevel) {
 		this.treeLevel = treeLevel;
 	}
@@ -68,15 +61,21 @@ public class Directory implements Component {
 		return space;
 	}
 
+
+
+	public List<Component> getComponents() {
+		return components;
+	}
+
 	@Override
-	public Component getComponentByName(String name) {	
+	public Component findComponentByName(String name) {	
 		Component c = null;
 		for (Component comp : this.components) {
 			//System.out.println("Comp name: " + comp.getFileName());
 			if (comp.getComponentName().equals(name) ) {
 				return comp;
 			} else {
-				c = comp.getComponentByName(name);
+				c = comp.findComponentByName(name);
 				if (c != null) {
 					break;
 				}
@@ -84,10 +83,6 @@ public class Directory implements Component {
 		}
 		
 		return c;
-	}
-
-	public List<Component> getComponents() {
-		return components;
 	}
 	
 }

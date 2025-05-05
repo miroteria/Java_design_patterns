@@ -1,12 +1,9 @@
-package dp_composite_file;
+package design_patterns.dp_composite_file;
 
 public interface Component {
-	public void showDetail();
+	public void showDetail(int treeLevel);
 	public int getComponentSize();
+	public Component findComponentByName(String name);	
 	public String getComponentName();
-	public String getComponentType();
-	public Component getComponentByName(String name);
-	public void setTreeLevel(int treeLevel);
-	
-	
+	public String getComponentType();		
 }
