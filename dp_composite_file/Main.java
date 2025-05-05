@@ -1,13 +1,15 @@
-package design_patterns.dp_composite_file;
+package dp_composite_file;
 
 public class Main {
 
 	public static void main(String[] args) {
 		TreeFactory treeFactory = new TreeFactory();
 		
-		// Test data...
-		// Creating test tree with directories and files. 
-		Component tree = treeFactory.createTree();			
+		// Creating Test data...
+		// The tree with directories and files. 
+		Component tree = treeFactory.createTree();	
+		
+		// write's out the tree
 		tree.showDetail(0);
 		
 		System.out.println("***************************************************************");

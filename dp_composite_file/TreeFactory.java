@@ -1,9 +1,13 @@
-package design_patterns.dp_composite_file;
+package dp_composite_file;
 
 public class TreeFactory {
-	private Component tree;
-	private Component foundComponent = null;
-
+	
+	/*
+	 * This method is used for creating test data
+	 * 
+	 * Creates the tree with directories and files...
+	 * 
+	 * */
 	public Component createTree() {
 		Directory root = new Directory("ROOT");
 		Directory pictures = new Directory("PICTURES");
@@ -25,9 +29,7 @@ public class TreeFactory {
 					vacationItaly.addComponent(new File("picItaly-1.jpg", 256));
 					vacationItaly.addComponent(new File("picItaly-2.jpg", 256));
 					vacationItaly.addComponent(new File("picItaly-3.jpg", 256));
-		
-		this.tree = root;			
-		
+				
 		return root;
 	}		
 	
