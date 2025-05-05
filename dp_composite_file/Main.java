@@ -9,7 +9,7 @@ public class Main {
 		// The tree with directories and files. 
 		Component tree = treeFactory.createTree();	
 		
-		// write's out the tree
+		// write's out the tree on console
 		tree.showDetail(0);
 		
 		System.out.println("***************************************************************");
