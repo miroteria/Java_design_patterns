@@ -29,19 +29,6 @@ public class TreeFactory {
 		this.tree = root;			
 		
 		return root;
-	}
-	
-	public Component getComponentByName(String name) {				
-		Directory root = (Directory) this.tree;
-		root.getComponents().forEach(component -> {
-			System.out.println("looping component: " + component.getComponentName());
-			if (component.getComponentName().equals(name)) {
-				
-				this.foundComponent = component;
-			} 			
-		});
-		return this.foundComponent;
-	}
-	
+	}		
 	
 }
