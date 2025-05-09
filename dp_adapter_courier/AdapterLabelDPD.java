@@ -1,10 +1,10 @@
-package design_patterns.dp_adapter;
+package dp_adapter_courier;
 
 /**
  * 
  * This class represent the adapter
  * Input side is method createLabel(LabelInfoContainer labelInfoContainer)
- * 
+ * adapter between...
  * 
  * 
  * 

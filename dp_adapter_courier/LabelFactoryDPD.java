@@ -1,4 +1,4 @@
-package design_patterns.dp_adapter;
+package dp_adapter_courier;
 
 public class LabelFactoryDPD {
 	public void generate(String senderRecipientAddress, String anotherInfo) {

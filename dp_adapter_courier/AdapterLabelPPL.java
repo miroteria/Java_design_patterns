@@ -1,4 +1,4 @@
-package design_patterns.dp_adapter;
+package dp_adapter_courier;
 
 public class AdapterLabelPPL implements PackageLabel {
 	private LabelFactoryPPL labelFactoryPPL;
