@@ -3,9 +3,12 @@ package dp_adapter_courier;
 /**
  * 
  * This class represent the adapter
- * Input side is method createLabel(LabelInfoContainer labelInfoContainer)
- * adapter between...
  * 
+ * Input side (target) accessible from client is method createLabel(LabelInfoContainer labelInfoContainer)
+ * and adaptee - class we want to use is LabelFactoryDPD
+ * 				- adaptee method we want to use is labelFactoryDPD.generate(addresses, another)
+ * 
+ * This adapter prepares parameters for method labelFactoryDPD.generate and than run this method.
  * 
  * 
  * */
