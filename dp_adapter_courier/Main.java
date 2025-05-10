@@ -1,4 +1,4 @@
-package dp_adapter_courier;
+package design_patterns.dp_adapter;
 
 public class Main {
 
