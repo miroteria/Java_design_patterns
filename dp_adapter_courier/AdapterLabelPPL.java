@@ -9,7 +9,7 @@ package design_patterns.dp_adapter;
  * 				- adaptee method we want to use is labelFactoryPPL.generateLabel(addresses, another)
  * 
  * This adapter prepares parameters: 	addresses
- * 									 	another
+ * 					another
  *  
  * for method labelFactoryPPL.generateLabel and run this method.
  * 
@@ -28,7 +28,7 @@ public class AdapterLabelPPL implements PackageLabel {
 	 * @param labelInfoContainer 
 	 * 		  	Data from labelInfoContainer are converted into form appropriate for adaptee 
 	 * 			are created local variables: 	addresses 
-	 * 											another 
+	 * 							another 
 	 * 
 	 * Theese variables are passed to adaptee method: labelFactoryPPL.generateLabel(addresses, another)
 	 * 
