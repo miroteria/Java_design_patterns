@@ -11,8 +11,8 @@ package design_patterns.dp_adapter;
  * 					labelFactoryPost.create(senderAddress, recipientAddress, another);
  * 
  * This adapter prepares parameters: 	senderAddress
- * 										recipientAddress 
- * 										another 
+ * 					recipientAddress 
+ * 					another 
  * 
  * for method labelFactoryDPD.create and than run this method.
  * 
@@ -31,8 +31,8 @@ public class AdapterLabelPost implements PackageLabel {
 	 * @param labelInfoContainer 
 	 * 		  	Data from labelInfoContainer are converted into form appropriate for adaptee
 	 * 			are created local variables: 	senderAddress 
-	 * 											recipientAddress 
-	 * 											another 
+	 * 							recipientAddress 
+	 * 							another 
 	 * 
 	 * Theese variables are passed to adaptee method: labelFactoryPost.create(senderAddress, recipientAddress, another)
 	 * 
