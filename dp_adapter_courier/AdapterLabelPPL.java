@@ -6,7 +6,7 @@ package design_patterns.dp_adapter;
  * 
  * Input side (target) accessible from client - method createLabel(LabelInfoContainer labelInfoContainer)
  * and adaptee - class we want to use is LabelFactoryPPL
- * 				- adaptee method we want to use is labelFactoryPPL.generateLabel(addresses, another)
+ * 		- adaptee method we want to use is labelFactoryPPL.generateLabel(addresses, another)
  * 
  * This adapter prepares parameters: 	addresses
  * 					another
