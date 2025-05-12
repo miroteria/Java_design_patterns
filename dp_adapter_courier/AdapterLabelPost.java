@@ -7,8 +7,8 @@ package design_patterns.dp_adapter;
  * 
  * Input side (target) accessible from client - method createLabel(LabelInfoContainer labelInfoContainer)
  * and adaptee - class we want to use is LabelFactoryPost
- * 				- adaptee method we want to use is 
- * 					labelFactoryPost.create(senderAddress, recipientAddress, another);
+ * 		- adaptee method we want to use is 
+ * 		labelFactoryPost.create(senderAddress, recipientAddress, another);
  * 
  * This adapter prepares parameters: 	senderAddress
  * 					recipientAddress 
