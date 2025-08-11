@@ -5,7 +5,10 @@ public class FrameBasic implements DashBoardFrame {
 	private DashBoardInstrument tachometer;
 	private DashBoardInstrument fuelGauge; 
 	
-	public FrameBasic(DashBoardInstrument speedometer, DashBoardInstrument tachometer, DashBoardInstrument fuelGauge) {
+	public FrameBasic(DashBoardInstrument speedometer, 
+			DashBoardInstrument tachometer, 
+			DashBoardInstrument fuelGauge) 
+	{
 		this.speedometer = speedometer;
 		this.tachometer = tachometer;
 		this.fuelGauge = fuelGauge;
